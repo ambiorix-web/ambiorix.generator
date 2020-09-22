@@ -9,7 +9,7 @@ Easily generate template projects with correct file structure for 'Ambiorix' app
 ## Installation
 
 ``` r
-install.packages("remotes")
+# install.packages("remotes")
 remotes::install_github("JohnCoene/ambiorix.generator")
 ```
 
