@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  [! header.html !]
+  <script>
+    var wss = new Ambiorix();
+    wss.receive("hello", function(msg){
+      console.log(msg);
+      $('#textInput').val(msg);
+    });
+    wss.start();
+  </script>
+  <title>Ambiorix</title>
+</head>
+<body>
+  <div class="container-fluid">
+    <!-- filled with render -->
+    <h1 class="brand">[% title %]</h1>
+    <h2 class="brand">[% subtitle %]</h2>
+    <!-- button -->
+    <button class="btn btn-primary" onclick='Ambiorix.send("hello", "Hi from the server")'>Fill input via server</button>
+    <!-- input -->
+    <div class="input-group mb-3">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Welcome:</span>
+      </div>
+      <input id='textInput' type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+    </div>
+  </div>
+  [! after-body.html !]
+</body>
+</html>
+
