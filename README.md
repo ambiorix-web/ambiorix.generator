@@ -4,7 +4,7 @@
 
 # ambiorix.generator
 
-Easily generate template projects with correct file structure for 'Ambiorix' applications and APIs.
+Easily generate template projects with correct file structure for [ambiorix](https://github.com/JohnCoene/ambiorix) applications and APIs.
 
 ## Installation
 
