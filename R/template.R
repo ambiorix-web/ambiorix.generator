@@ -19,7 +19,7 @@ add_template_basic <- function(name){
 #' @export
 add_template_bootstrap <- function(name){
 
-  add_temp(name, "basic")
+  add_temp(name, "bootstrap")
   invisible()
 }
 
