@@ -4,11 +4,14 @@
 \alias{generator}
 \alias{create_basic}
 \alias{create_bootstrap}
+\alias{create_vue}
 \title{Create Ambiorix Projects}
 \usage{
 create_basic(path)
 
 create_bootstrap(path)
+
+create_vue(path)
 }
 \arguments{
 \item{path}{Path where to create ambiorix application.}
@@ -21,6 +24,7 @@ Create the basic structure for Ambiorix projects.
 \itemize{
 \item \code{create_basic}: A basic template.
 \item \code{create_bootstrap}: A bootstrap 4 template.
+\item \code{create_vue}: A template using vue.
 }
 }
 

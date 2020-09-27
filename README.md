@@ -17,3 +17,4 @@ remotes::install_github("JohnCoene/ambiorix.generator")
 
 - `create_basic`: A basic template.
 - `create_bootstrap`: A bootstrap 4 template.
+- `create_vue`: A vue template.
