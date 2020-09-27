@@ -18,3 +18,5 @@ remotes::install_github("JohnCoene/ambiorix.generator")
 - `create_basic`: A basic template.
 - `create_bootstrap`: A bootstrap 4 template.
 - `create_vue`: A vue template.
+
+Projects set up can be further enhanced with [packer](https://packer.john-coene.com/#/) scaffolds.

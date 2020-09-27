@@ -35,7 +35,15 @@ create_proj <- function(path, dir){
   if(fs::dir_exists(path))
     stop("Path already exists", call. = FALSE)
 
+  # templates
   project <- system.file(dir, package = "ambiorix.generator")
+
+  # copy
   fs::dir_copy(project, path)
+  fs::file_create(paste0(path, "/.here"))
+  
+  # message
   cli::cli_alert_success("Created ambiorix template: {.val {path}}")
 }
+
+
