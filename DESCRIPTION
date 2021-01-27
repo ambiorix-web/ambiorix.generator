@@ -1,6 +1,6 @@
 Package: ambiorix.generator
 Title: Generate Templates for 'Ambiorix'
-Version: 1.0.1.9000
+Version: 1.0.2.9000
 Authors@R: 
     person(given = "John",
            family = "Coene",
