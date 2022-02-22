@@ -45,5 +45,3 @@ create_proj <- function(path, dir){
   # message
   cli::cli_alert_success("Created ambiorix template: {.val {path}}")
 }
-
-
