@@ -6,7 +6,7 @@
 #' 
 #' @section Projects:
 #' - `create_basic`: A basic template.
-#' - `create_bootstrap`: A bootstrap 4 template.
+#' - `create_bootstrap`: A bootstrap 5 template.
 #' - `create_vue`: A template using vue.
 #' 
 #' @importFrom assertthat assert_that
