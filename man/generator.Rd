@@ -5,6 +5,7 @@
 \alias{create_basic}
 \alias{create_bootstrap}
 \alias{create_vue}
+\alias{create_package}
 \title{Create Ambiorix Projects}
 \usage{
 create_basic(path)
@@ -12,6 +13,8 @@ create_basic(path)
 create_bootstrap(path)
 
 create_vue(path)
+
+create_package(path)
 }
 \arguments{
 \item{path}{Path where to create ambiorix application.}
@@ -22,8 +25,9 @@ Create the basic structure for Ambiorix projects.
 \section{Projects}{
 
 \itemize{
+\item \code{create_package}: A basic app in R package form (recommended).
 \item \code{create_basic}: A basic template.
-\item \code{create_bootstrap}: A bootstrap 4 template.
+\item \code{create_bootstrap}: A bootstrap 5 template.
 \item \code{create_vue}: A template using vue.
 }
 }

@@ -1,3 +1,8 @@
+# v1.0.2.9000
+
+- Added `create_package` to create ambiorix apps as R packages.
+- Update all generators to work with new template paradigm of latest ambiorix.
+
 # v1.0.2
 
 - Templates now use CRAN version of ambiorix

@@ -5,6 +5,7 @@
 #' @param path Path where to create ambiorix application.
 #' 
 #' @section Projects:
+#' - `create_package`: A basic app in R package form (recommended).
 #' - `create_basic`: A basic template.
 #' - `create_bootstrap`: A bootstrap 5 template.
 #' - `create_vue`: A template using vue.
@@ -29,6 +30,21 @@ create_vue <- function(path){
   create_proj(path, "vue")
 }
 
+#' @name generator
+#' @export
+create_package <- function(path){
+  create_proj(path, "basic-package")
+  edit_package(path)
+}
+
+#' Create Project
+#' 
+#' Create a project, technically just copies files.
+#' 
+#' @param path Path to copy to.
+#' @param dir Internal directory containing project.
+#' 
+#' @keywords internal
 create_proj <- function(path, dir){
   assert_that(not_missing(path))
 
@@ -44,4 +60,21 @@ create_proj <- function(path, dir){
   
   # message
   cli::cli_alert_success("Created ambiorix template: {.val {path}}")
+}
+
+#' Edit Package
+#' 
+#' Edits the package name after files have been created.
+#' 
+#' @param path Path to the package
+#' 
+#' @keywords internal
+edit_package <- function(path) {
+  desc <- readLines(file.path(path, "DESCRIPTION"))
+  desc <- gsub("#PKG#", path, desc)
+  writeLines(desc, file.path(path, "DESCRIPTION"))
+
+  assets <- readLines(file.path(path, "R", "assets.R"))
+  assets <- gsub("#PKG#", path, assets)
+  writeLines(assets, file.path(path, "R", "assets.R"))
 }
