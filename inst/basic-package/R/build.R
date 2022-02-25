@@ -20,6 +20,9 @@ build <- function() {
   # about
   app$get("/about", render_about)
 
+  # md
+  app$get("/md", render_md)
+
   # websocket 
   app$receive("hello", function(msg, ws){
     print(msg)
