@@ -1,4 +1,12 @@
-# render homepage
+#' Home
+#' 
+#' Render the homepage.
+#' 
+#' @inheritParams handler
+#' 
+#' @name views
+#' 
+#' @keywords internal
 render_home <- function(req, res){
   res$render(
     template_path("home.html"),
@@ -9,7 +17,8 @@ render_home <- function(req, res){
   )
 }
 
-# render about
+#' @describeIn views Render about page.
+#' @keywords internal
 render_about <- function(req, res){
   res$render(
     template_path("about.R"),
@@ -20,10 +29,19 @@ render_about <- function(req, res){
   )
 }
 
-# 404: not found
+#' @describeIn views Render 404 page.
+#' @keywords internal
 render_404 <- function(req, res){
   res$send_file(
     template_path("404.html"),
     status = 404L
+  )
+}
+
+#' @describeIn views Render 404 page.
+#' @keywords internal
+render_md <- function(req, res){
+  res$md(
+    template_path("file.md")
   )
 }
