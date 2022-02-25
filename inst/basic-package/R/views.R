@@ -7,9 +7,9 @@
 #' @name views
 #' 
 #' @keywords internal
-render_home <- function(req, res){
+render_html <- function(req, res){
   res$render(
-    template_path("home.html"),
+    template_path("file.html"),
     list(
       title = "Hello from R", 
       subtitle = "This is rendered with {glue}"
@@ -19,12 +19,12 @@ render_home <- function(req, res){
 
 #' @describeIn views Render about page.
 #' @keywords internal
-render_about <- function(req, res){
+render_r <- function(req, res){
   res$render(
-    template_path("about.R"),
+    template_path("file.R"),
     list(
       title = "About", 
-      name = robj(req$query$name)
+      name = sample(c("John", "Bob"), 1)
     )
   )
 }

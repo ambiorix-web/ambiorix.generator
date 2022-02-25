@@ -15,10 +15,10 @@ build <- function() {
   app$static(assets_path(), "static")
 
   # homepage
-  app$get("/", render_home)
+  app$get("/", render_html)
 
   # about
-  app$get("/about", render_about)
+  app$get("/r", render_r)
 
   # md
   app$get("/md", render_md)
