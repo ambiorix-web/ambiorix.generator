@@ -24,7 +24,7 @@ render_r <- function(req, res){
     template_path("file.R"),
     list(
       title = "About", 
-      name = sample(c("John", "Bob"), 1)
+      name = robj(sample(c("John", "Bob", "Zoe"), 1))
     )
   )
 }
