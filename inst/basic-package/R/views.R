@@ -7,7 +7,7 @@
 #' @name views
 #' 
 #' @keywords internal
-render_html <- function(req, res){
+home_get <- function(req, res){
   res$render(
     template_path("file.html"),
     list(
@@ -17,19 +17,26 @@ render_html <- function(req, res){
   )
 }
 
-#' @describeIn views Render about page.
+#' About
+#' 
+#' Render the about.
+#' 
+#' @inheritParams handler
+#' 
+#' @name views
 #' @keywords internal
-render_r <- function(req, res){
-  res$render(
-    template_path("file.R"),
-    list(
-      title = "About", 
-      name = robj(sample(c("John", "Bob", "Zoe"), 1))
-    )
+about_get <- function(req, res) {
+  res$send(
+    "About us!"
   )
 }
 
-#' @describeIn views Render 404 page.
+#' Error
+#' 
+#' Rendering errors (!= 200).
+#' 
+#' @name errors
+#' 
 #' @keywords internal
 render_404 <- function(req, res){
   res$send_file(
@@ -38,10 +45,11 @@ render_404 <- function(req, res){
   )
 }
 
-#' @describeIn views Render 404 page.
+#' @rdname errors
 #' @keywords internal
-render_md <- function(req, res){
-  res$md(
-    template_path("file.md")
+render_500 <- function(req, res){
+  res$send(
+    "Internal server error",
+    status = 500L
   )
 }
