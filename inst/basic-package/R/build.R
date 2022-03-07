@@ -23,6 +23,10 @@ build <- function() {
   # about
   app$get("/about", about_get)
 
+  # contact
+  app$get("/contact", contact_get)
+  app$post("/contact", contact_post)
+
   # websocket 
   app$receive("hello", function(msg, ws){
     print(msg)
