@@ -28,7 +28,7 @@ build <- function() {
   app$post("/contact", contact_post)
 
   # websocket 
-  app$receive("hello", function(msg, ws){
+  app$receive("hello", \(msg, ws){
     print(msg)
     ws$send("hello", "Hello back! (sent from R)")
   })
