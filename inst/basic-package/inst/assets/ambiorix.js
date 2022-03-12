@@ -1,6 +1,14 @@
-// get websocket
-let ambiorixSocket = new WebSocket('ws://' + window.location.host);
+// default insecure
+let protocol = 'ws://';
 
+// upgrade if secure
+if (window.location.protocol == "https:")
+  protocol = 'wss://';
+
+// get websocket
+let ambiorixSocket = new WebSocket(protocol + window.location.host);
+
+// ambiorix Websocket
 class Ambiorix {
   constructor(){
     this._handlers = new Map()
@@ -16,7 +24,7 @@ class Ambiorix {
   }
   start(){
     var that = this;
-    ambiorixSocket.onmessage = function(msg){
+    ambiorixSocket.onmessage = (msg) => {
       let msgParsed = JSON.parse(msg.data);
 
       if(!msgParsed.isAmbiorix)
@@ -31,4 +39,21 @@ class Ambiorix {
   receive(name, fun){
     this._handlers.set(name, fun)
   }
+}
+
+// helper function to parseCookies
+// parseCookie(document.cookie);
+const parseCookie = str => {
+  if(str == "")
+    return {};
+
+  return str
+    .split(';')
+    .map(v => v.split('='))
+    .reduce(
+      (acc, v) => {
+        acc[decodeURIComponent(v[0].trim())] = decodeURIComponent(v[1].trim());
+        return acc;
+      }, 
+    {});
 }

@@ -2,6 +2,7 @@
 
 - Added `create_package` to create ambiorix apps as R packages.
 - Update all generators to work with new template paradigm of latest ambiorix.
+- Update assets with improve, more secure, websocket 
 
 # v1.0.2
 
