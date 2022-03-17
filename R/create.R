@@ -71,10 +71,10 @@ create_proj <- function(path, dir){
 #' @keywords internal
 edit_package <- function(path) {
   desc <- readLines(file.path(path, "DESCRIPTION"))
-  desc <- gsub("#PKG#", path, desc)
+  desc <- gsub("#PKG#", basename(path), desc)
   writeLines(desc, file.path(path, "DESCRIPTION"))
 
   assets <- readLines(file.path(path, "R", "assets.R"))
-  assets <- gsub("#PKG#", path, assets)
+  assets <- gsub("#PKG#", basename(path), assets)
   writeLines(assets, file.path(path, "R", "assets.R"))
 }
