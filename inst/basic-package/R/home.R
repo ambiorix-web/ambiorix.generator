@@ -7,7 +7,7 @@
 #' @name views
 #' 
 #' @keywords internal
-home_get <- function(req, res){
+home_get <- \(req, res){
   res$render(
     template_path("home.html"),
     list(

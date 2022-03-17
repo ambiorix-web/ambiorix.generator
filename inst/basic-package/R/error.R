@@ -6,18 +6,18 @@
 #' @name errors
 #' 
 #' @keywords internal
-render_404 <- function(req, res){
+render_404 <- \(req, res){
+  res$status <- 404L
   res$send_file(
-    template_path("404.html"),
-    status = 404L
+    template_path("404.html")
   )
 }
 
 #' @rdname errors
 #' @keywords internal
-render_500 <- function(req, res){
+render_500 <- \(req, res){
+  res$status <- 500L
   res$send(
-    "Internal server error",
-    status = 500L
+    "Internal server error"
   )
 }

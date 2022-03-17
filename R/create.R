@@ -15,18 +15,21 @@
 #' @name generator
 #' @export
 create_basic <- function(path){
+  .Deprecated("create_package", package = "ambiorix.generator")
   create_proj(path, "basic")
 }
 
 #' @name generator
 #' @export
 create_bootstrap <- function(path){
+  .Deprecated("create_package", package = "ambiorix.generator")
   create_proj(path, "bootstrap")
 }
 
 #' @name generator
 #' @export
 create_vue <- function(path){
+  .Deprecated("create_package", package = "ambiorix.generator")
   create_proj(path, "vue")
 }
 
@@ -56,7 +59,6 @@ create_proj <- function(path, dir){
 
   # copy
   fs::dir_copy(project, path)
-  fs::file_create(paste0(path, "/.here"))
   
   # message
   cli::cli_alert_success("Created ambiorix template: {.val {path}}")

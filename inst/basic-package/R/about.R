@@ -6,7 +6,7 @@
 #' 
 #' @name views
 #' @keywords internal
-about_get <- function(req, res) {
+about_get <- \(req, res) {
   res$send(
     "About us!"
   )

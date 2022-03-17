@@ -1,11 +1,13 @@
 #' Build
 #' 
-#' build the application
+#' Build the application
+#' 
+#' @import ambiorix
 #' 
 #' @return An object of class `Ambiorix`.
 #' 
 #' @export 
-build <- function() {
+build <- \() {
   app <- Ambiorix$new()
 
   # 404 page
