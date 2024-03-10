@@ -15,7 +15,7 @@ render_404 <- \(req, res){
 
 #' @rdname errors
 #' @keywords internal
-render_500 <- \(req, res){
+render_500 <- \(req, res, error){
   res$status <- 500L
   res$send(
     "Internal server error"
