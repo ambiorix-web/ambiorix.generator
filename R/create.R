@@ -40,6 +40,16 @@ create_package <- function(path){
   edit_package(path)
 }
 
+#' @param use_box Logical. Whether to use [`{box}`](https://klmr.me/box/) for a
+#' modular app structure.
+#' Default is `TRUE`.
+#' If `FALSE`, the template will be same as if you used [create_package()].
+#' @name generator
+#' @export
+create_backend <- function(path, use_box = TRUE) {
+  if (use_box) create_proj(path, "backend") else create_package(path)
+}
+
 #' Create Project
 #' 
 #' Create a project, technically just copies files.
