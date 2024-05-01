@@ -2,11 +2,16 @@ Package: ambiorix.generator
 Title: Generate Templates for 'Ambiorix'
 Version: 1.0.2.9000
 Authors@R: 
-    person(given = "John",
+    c(person(given = "John",
            family = "Coene",
            role = c("aut", "cre"),
            email = "jcoenep@gmail.com",
-           comment = c(ORCID = "0000-0002-6637-4107"))
+           comment = c(ORCID = "0000-0002-6637-4107")),
+      person(given = "Kennedy",
+           family = "Mwavu",
+           role = "ctb",
+           email = "jcoenep@gmail.com",
+           comment = c(ORCID = "0009-0006-3157-7234")))
 Description: Easily generate template projects with correct file structure for 'Ambiorix' applications and APIs.
 License: GPL-3
 Encoding: UTF-8
