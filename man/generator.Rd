@@ -6,6 +6,7 @@
 \alias{create_bootstrap}
 \alias{create_vue}
 \alias{create_package}
+\alias{create_backend}
 \title{Create Ambiorix Projects}
 \usage{
 create_basic(path)
@@ -15,9 +16,16 @@ create_bootstrap(path)
 create_vue(path)
 
 create_package(path)
+
+create_backend(path, use_box = TRUE)
 }
 \arguments{
 \item{path}{Path where to create ambiorix application.}
+
+\item{use_box}{Logical. Whether to use \href{https://klmr.me/box/}{\code{{box}}} for a
+modular app structure.
+Default is \code{TRUE}.
+If \code{FALSE}, the template will be same as if you used \code{\link[=create_package]{create_package()}}.}
 }
 \description{
 Create the basic structure for Ambiorix projects.

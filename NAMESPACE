@@ -2,6 +2,7 @@
 
 export(add_template_basic)
 export(add_template_bootstrap)
+export(create_backend)
 export(create_basic)
 export(create_bootstrap)
 export(create_package)
