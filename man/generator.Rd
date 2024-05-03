@@ -6,7 +6,7 @@
 \alias{create_bootstrap}
 \alias{create_vue}
 \alias{create_package}
-\alias{create_backend}
+\alias{create_modular}
 \title{Create Ambiorix Projects}
 \usage{
 create_basic(path)
@@ -17,18 +17,20 @@ create_vue(path)
 
 create_package(path)
 
-create_backend(path, use_box = TRUE)
+create_modular(path, project_type = "backend")
 }
 \arguments{
-\item{path}{Path where to create ambiorix application.}
-
-\item{use_box}{Logical. Whether to use \href{https://klmr.me/box/}{\code{{box}}} for a
-modular app structure.
-Default is \code{TRUE}.
+\item{path}{String. Path to create template in.
 If \code{FALSE}, the template will be same as if you used \code{\link[=create_package]{create_package()}}.}
+
+\item{project_type}{String. The project type. Either "backend" (default) or
+"frontend".}
 }
 \description{
 Create the basic structure for Ambiorix projects.
+
+This approach creates a modular & nested app template which uses
+\href{https://klmr.me/box/}{{box}} to load & unload modules.
 }
 \section{Projects}{
 
@@ -40,3 +42,9 @@ Create the basic structure for Ambiorix projects.
 }
 }
 
+\examples{
+\dontrun{
+create_modular(path = ".", project_type = "backend")
+create_modular(path = ".", project_type = "frontend")
+}
+}
