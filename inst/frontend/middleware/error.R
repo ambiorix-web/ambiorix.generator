@@ -11,11 +11,10 @@ error_handler <- \(req, res, error = NULL) {
     error_msg <- conditionMessage(error)
     cli_alert_danger("Error: {error_msg}")
   }
-  response <- list(
-    code = 500L,
-    msg = "A server error occurred!"
-  )
+
+  msg <- "Error 500: A server error occurred!"
+  
   res$
     set_status(500L)$
-    json(response)
+    send(msg)
 }

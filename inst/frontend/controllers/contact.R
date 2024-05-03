@@ -1,16 +1,16 @@
 box::use(
-  .. / store / home[page],
+  .. / store / contact[page],
   .. / templates / template_path[template_path]
 )
 
-#' Handle GET at '/'
+#' Handle GET at '/contact'
 #'
 #' @export
-home_get <- \(req, res) {
+contact_get <- \(req, res) {
   res$render(
     template_path("page.html"),
     list(
-      title = "Home | Goated",
+      title = "Contact | Goated",
       content = page()
     )
   )
