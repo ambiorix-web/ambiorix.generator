@@ -40,14 +40,24 @@ create_package <- function(path){
   edit_package(path)
 }
 
-#' @param use_box Logical. Whether to use [`{box}`](https://klmr.me/box/) for a
-#' modular app structure.
-#' Default is `TRUE`.
+#' Create a modular app structure using `{box}`
+#'
+#' This approach creates a modular & nested app template which uses
+#' [{box}](https://klmr.me/box/) to load & unload modules.
+#' @param path String. Path to create template in.
 #' If `FALSE`, the template will be same as if you used [create_package()].
+#' @param project_type String. The project type. Either "backend" (default) or
+#' "frontend".
 #' @name generator
+#' @examples
+#' \dontrun{
+#' create_modular(path = ".", project_type = "backend")
+#' create_modular(path = ".", project_type = "frontend")
+#' }
 #' @export
-create_backend <- function(path, use_box = TRUE) {
-  if (use_box) create_proj(path, "backend") else create_package(path)
+create_modular <- function(path, project_type = "backend") {
+  assert_that(is_valid_project_type(project_type))
+  create_proj(path, project_type)
 }
 
 #' Create Project
