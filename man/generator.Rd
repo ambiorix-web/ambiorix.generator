@@ -6,7 +6,7 @@
 \alias{create_bootstrap}
 \alias{create_vue}
 \alias{create_package}
-\alias{create_modular}
+\alias{create_box}
 \title{Create Ambiorix Projects}
 \usage{
 create_basic(path)
@@ -17,11 +17,10 @@ create_vue(path)
 
 create_package(path)
 
-create_modular(path, project_type = "backend")
+create_box(path, project_type = c("backend", "frontend"))
 }
 \arguments{
-\item{path}{String. Path to create template in.
-If \code{FALSE}, the template will be same as if you used \code{\link[=create_package]{create_package()}}.}
+\item{path}{String. Path to create template in.}
 
 \item{project_type}{String. The project type. Either "backend" (default) or
 "frontend".}
@@ -44,7 +43,7 @@ This approach creates a modular & nested app template which uses
 
 \examples{
 \dontrun{
-create_modular(path = ".", project_type = "backend")
-create_modular(path = ".", project_type = "frontend")
+create_box(path = ".", project_type = "backend")
+create_box(path = ".", project_type = "frontend")
 }
 }
